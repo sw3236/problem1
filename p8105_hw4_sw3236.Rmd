@@ -1,0 +1,22 @@
+---
+title: "p8105_hw4_sw3236"
+author: "Shuang WU"
+date: "October 25, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+```
+
+
+```{r}
+pups <- read_csv(file = "./data/FAS_pups.csv", col_types = "ciiiii")
+pups <- 
+  pups %>%
+  clean_names() %>%
+  gather(key = pd_outcome, value = days, pd_ears:pd_walk)
+```
+
