@@ -20,3 +20,13 @@ pups <-
   gather(key = pd_outcome, value = days, pd_ears:pd_walk)
 ```
 
+```{r density}
+pup_distri = 
+  pups %>% 
+    ggplot(aes(x = days,y = ..density..,color = pd_outcome)) +
+      geom_density(aes(fill = pd_outcome),alpha = 0.2) +
+         labs(title = "Distribution of post-natal days")
+pup_distri
+```
+
+
