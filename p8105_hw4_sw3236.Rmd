@@ -5,6 +5,8 @@ date: "October 25, 2017"
 output: html_document
 ---
 
+#Problem1
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
@@ -20,7 +22,7 @@ pups <-
   gather(key = pd_outcome, value = days, pd_ears:pd_walk)
 ```
 
-```{r density}
+```{r density,warning=FALSE}
 pup_distri = 
   pups %>% 
     ggplot(aes(x = days,y = ..density..,color = pd_outcome)) +
