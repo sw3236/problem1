@@ -5,6 +5,8 @@ date: "October 25, 2017"
 output: html_document
 ---
 
+The project leader for this problem is Shuang Wu, and the collabrator is Dong Yuan.
+
 #Problem1
 
 ```{r setup, include=FALSE}
@@ -13,7 +15,7 @@ library(tidyverse)
 library(janitor)
 ```
 
-
+This problem uses the pups dataset. The original data file includes data in ¡°wide¡± format: the post-natal days on which developmental landmarks are reached are stored in columns called PD_outcome. The project lead will convert these data to ¡°long¡± format.
 ```{r}
 pups <- read_csv(file = "./data/FAS_pups.csv", col_types = "ciiiii")
 pups <- 
@@ -21,6 +23,8 @@ pups <-
   clean_names() %>%
   gather(key = pd_outcome, value = days, pd_ears:pd_walk)
 ```
+
+The collaborator will create a plot showing the distribution of post-natal days for each developmental landmark.
 
 ```{r density,warning=FALSE}
 pup_distri = 
@@ -31,4 +35,5 @@ pup_distri =
 pup_distri
 ```
 
+From the plot we can see that the distribution of post-natal days differ between landmarks. The density of ears and eyes are higher, while pivot and walk and relatively spread. The eyes have the most longer post_natal days and ears are the first coming after birth.
 
